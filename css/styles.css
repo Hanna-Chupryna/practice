@@ -250,11 +250,37 @@ Removes underlining in links
 }
 .taste-title {
   margin-bottom: 50px;
+  max-width: 412px;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .taste-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  /* row-gap: 24px;
+  column-gap: 32px; */
 }
 .test-item {
+  border-radius: 15px;
+  width: calc((100% - 32px * 3) / 4);
+  padding: 28px 23px;
+}
+
+.test-item:nth-child(4n + 1) {
+  background-color: #fd9222;
+}
+.test-item:nth-child(even) {
+  border: 1px solid #fd9222;
+  background: #fff;
+}
+.test-item:nth-child(4n + 3) {
+  background: #1e1823;
+}
+
+.test-item:nth-child(odd) .taste-subtitle {
+  color: #fff;
 }
 
 .taste-img {
@@ -280,7 +306,18 @@ Removes underlining in links
   margin-bottom: 50px;
 }
 
+.made-wrap {
+  display: flex;
+  gap: 20px;
+}
+
 .made-img {
+}
+
+.made-content {
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 32px;
 }
 
 .made-subtitle {
@@ -316,6 +353,9 @@ Removes underlining in links
   margin-bottom: 50px;
 }
 .products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 18px;
 }
 .products-item {
   border-radius: 15px;
@@ -323,6 +363,7 @@ Removes underlining in links
   background: #fff;
   padding: 32px 20px;
   text-align: center;
+  width: calc((100% - 18px * 3) / 4);
 }
 .products-img {
   margin-bottom: 8px;
@@ -360,8 +401,11 @@ Removes underlining in links
   margin-bottom: 50px;
 }
 .sellers-list {
+  display: flex;
+  gap: 16px;
 }
 .sellers-item {
+  width: calc((100% - 16px * 2) / 3);
 }
 .sellers-img {
 }
@@ -393,12 +437,15 @@ Removes underlining in links
 }
 .loved-list {
   margin-bottom: 50px;
+  display: flex;
+  gap: 28px;
 }
 .loved-item {
   border-radius: 15px;
   border: 1px solid rgba(17, 17, 17, 0.1);
   background: #fff;
   padding: 56px 24px 24px 24px;
+  width: calc((100% - 56px) / 3);
 }
 .loved-img {
 }
@@ -421,13 +468,16 @@ Removes underlining in links
 }
 
 .loved-btn {
-  color: #111;
   font-family: inherit;
   font-size: 18px;
   font-weight: 600;
   line-height: normal;
+  border-radius: 100px;
+  border: 1px solid #fd9222;
+  padding: 14px 40px;
+  background-color: transparent;
+
   cursor: pointer;
-  background-color: #ffffff;
   display: block;
   margin: 0 auto;
 }
