@@ -81,7 +81,21 @@ Removes underlining in links
 
 /**========= HEADER ===========*/
 
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-container {
+  display: flex;
+  gap: 98px;
+  align-items: center;
+}
+
 .header-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   color: #111;
   font-size: 18px;
   font-weight: 700;
@@ -91,6 +105,18 @@ Removes underlining in links
 
 .header-logo-italic {
   font-style: italic;
+}
+
+.header-navigation {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu {
+  display: flex;
+  gap: 24px;
 }
 
 .header-menu-link {
@@ -107,6 +133,7 @@ Removes underlining in links
 }
 
 .header-soc {
+  display: flex;
 }
 .header-soc-item {
 }
@@ -134,6 +161,11 @@ Removes underlining in links
   max-width: 484px;
 }
 
+.hero-buttons {
+  display: flex;
+  align-items: center;
+}
+
 .hero-buy-btn {
   color: #fff;
   background-color: #fd9222;
@@ -141,7 +173,13 @@ Removes underlining in links
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
+  padding: 14px 40px;
+  margin-right: 14px;
+
   cursor: pointer;
+  border-radius: 100px;
+  background-color: #fd9222;
+  border: none;
 }
 .hero-buy-btn:hover,
 .hero-buy-btn:focus {
@@ -154,18 +192,21 @@ Removes underlining in links
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  padding: 14px 40px;
 }
 .hero-anchor-btn:hover,
 .hero-anchor-btn:focus {
   color: #fd9222;
 }
 .hero-bottom-btn {
-  background-color: #1e1823;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.03em;
+  margin-left: auto;
 }
 .hero-bottom-btn:hover,
 .hero-bottom-btn:focus {
@@ -181,8 +222,13 @@ Removes underlining in links
   padding-bottom: 50px;
 }
 .features-list {
+  padding-left: 18px;
+  padding-right: 18px;
+  display: flex;
+  gap: 88px;
 }
 .features-item {
+  width: calc((100% - 88px) / 3);
 }
 .features-subtitle {
   color: #fff;
@@ -442,13 +488,11 @@ Removes underlining in links
   letter-spacing: -0.02em;
 }
 
-
 .footer-top {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 50px;
   margin-bottom: 24px;
 }
-
 
 .footer-navigation {
 }
