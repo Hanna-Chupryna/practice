@@ -822,3 +822,36 @@ Removes underlining in links
   line-height: normal;
   letter-spacing: -0.02em;
 }
+
+.check-text {
+  color: rgba(64, 64, 64, 0.6);
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.check-text a {
+  color: #fd9222;
+  text-decoration-line: underline;
+}
+
+.check-text-box {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.modal-check:checked + .check-text > .check-text-box {
+    background: #fd9222;
+    border: none;
+    fill: #FFF;
+}
