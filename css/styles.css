@@ -30,6 +30,8 @@ a {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 /*TODO Removes markers from the list
@@ -68,9 +70,9 @@ Removes underlining in links
 .section-title {
   color: #111;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 1.17;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
@@ -322,7 +324,7 @@ Removes underlining in links
 
 /**========== TASTE ===========*/
 .taste {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 .taste-title {
   margin-bottom: 50px;
@@ -334,16 +336,19 @@ Removes underlining in links
 .taste-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 32px;
+  gap: 20px;
   /* row-gap: 24px;
   column-gap: 32px; */
 }
 .test-item {
   border-radius: 15px;
-  width: calc((100% - 32px * 3) / 4);
+  width: 100%;
   padding: 28px 23px;
 }
 
+.test-item:not(:nth-child(-n + 4)) {
+  display: none;
+}
 .test-item:nth-child(4n + 1) {
   background-color: #fd9222;
 }
@@ -360,6 +365,7 @@ Removes underlining in links
 }
 
 .taste-img {
+  margin: 0 auto;
   margin-bottom: 36px;
 }
 
@@ -375,7 +381,7 @@ Removes underlining in links
 /**========== MADE ============*/
 
 .made {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .made-title {
@@ -384,16 +390,18 @@ Removes underlining in links
 
 .made-wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .made-img {
+  width: 100%;
 }
 
 .made-content {
   border-radius: 15px;
   background-color: #fff;
-  padding: 32px;
+  padding: 20px 14px;
 }
 
 .made-subtitle {
@@ -401,14 +409,14 @@ Removes underlining in links
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33em;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .made-list {
 }
 
 .made-item {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   padding-left: 16px;
   position: relative;
 }
@@ -438,7 +446,7 @@ Removes underlining in links
 
 /**========= PRODUCTS =========*/
 .products {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 .products-title {
   margin-bottom: 50px;
@@ -446,7 +454,7 @@ Removes underlining in links
 .products-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 18px;
+  gap: 32px;
 }
 .products-item {
   border-radius: 15px;
@@ -454,9 +462,10 @@ Removes underlining in links
   background: #fff;
   padding: 32px 20px;
   text-align: center;
-  width: calc((100% - 18px * 3) / 4);
+  width: 100%;
 }
 .products-img {
+  margin: 0 auto;
   margin-bottom: 8px;
 }
 .products-subtitle {
@@ -622,7 +631,7 @@ Removes underlining in links
 }
 
 /**========= FOOTER ============*/
-
+/* 
 .footer {
   background: #1e1823;
   padding-top: 50px;
@@ -739,7 +748,7 @@ Removes underlining in links
 }
 .footer-menu-link:is(:hover, :focus) {
   color: #fd9222;
-}
+} */
 
 /**========= MODAL WINDOWS ============*/
 .backdrop {
@@ -935,11 +944,18 @@ Removes underlining in links
   .container {
     max-width: 734px;
   }
+  .made .container {
+    max-width: 644px;
+  }
+  .section-title {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
   .features {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
   .features-list {
     gap: 44px 88px;
   }
@@ -947,12 +963,44 @@ Removes underlining in links
     width: calc((100% - 88px) / 2);
     padding: 0;
   }
+
+  .taste {
+    padding-top: 100px;
+  }
+  .taste-list {
+    gap: 32px;
+  }
+  .test-item {
+    width: calc((100% - 32px) / 2);
+  }
+  .test-item:not(:nth-child(-n + 4)) {
+    display: block;
+  }
+
+  .made {
+    padding-top: 100px;
+  }
+  .made-content {
+    padding: 32px;
+  }
+  .made-subtitle {
+    margin-bottom: 28px;
+  }
+
+  .products {
+    padding-top: 100px;
+  }
+  .products-item {
+    width: calc((100% - 32px) / 2);
+  }
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .container,
+  .made .container {
     max-width: 1166px;
   }
+
   .features-list {
     padding-left: 18px;
     padding-right: 18px;
@@ -963,5 +1011,35 @@ Removes underlining in links
   }
   .features-item:not(:last-child)::after {
     display: block;
+  }
+
+  .taste {
+    padding-top: 120px;
+  }
+  .taste-list {
+    gap: 24px 32px;
+  }
+  .test-item {
+    width: calc((100% - 32px * 3) / 4);
+  }
+
+  .made {
+    padding-top: 120px;
+  }
+  .made-wrap {
+    flex-wrap: nowrap;
+  }
+  .made-item {
+    margin-bottom: 24px;
+  }
+
+  .products {
+    padding-top: 120px;
+  }
+  .products-list {
+    gap: 24px 18px;
+  }
+  .products-item {
+    width: calc((100% - 18px * 3) / 4);
   }
 }
