@@ -117,7 +117,7 @@ Removes underlining in links
 }
 
 .header-menu {
-  display: flex;
+  display: none;
   gap: 24px;
 }
 
@@ -138,7 +138,7 @@ Removes underlining in links
 }
 
 .header-soc {
-  display: flex;
+  display: none;
   gap: 14px;
 }
 .header-soc-item {
@@ -170,6 +170,65 @@ Removes underlining in links
   fill: #fd9222;
 }
 
+.mob-menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e1823;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  overflow: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+}
+
+.menu-close-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 88px;
+}
+.mob-menu-list {
+}
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mob-menu-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.mob-soc {
+  display: flex;
+  gap: 14px;
+  /* to place icons at the bottom  */
+  margin-top: auto;
+}
+.mob-soc-item {
+  width: 40px;
+  height: 40px;
+}
+.mob-soc-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mob-soc-icon {
+  fill: #ffffff;
+}
+
 /**=========== HERO ===========*/
 .hero {
   padding-bottom: 80px;
@@ -181,27 +240,41 @@ Removes underlining in links
       rgba(17, 17, 17, 0.4),
       rgba(17, 17, 17, 0.4)
     ),
-    url(../images/chocolate_main_optim.jpg);
+    url(../images/chocolate_main_mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 380px 40px 40px 40px;
+  padding: 395px 20px 20px 20px;
   border-radius: 30px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero-container {
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url(../images/chocolate_main_mob_2x.jpg);
+  }
 }
 
 .hero-title {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.21;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   margin-bottom: 32px;
-  max-width: 484px;
+  max-width: 283px;
 }
 
 .hero-buttons {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
+  row-gap: 32px;
 }
 
 .hero-buy-btn {
@@ -211,7 +284,7 @@ Removes underlining in links
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
-  padding: 14px 40px;
+  padding: 12px 28px;
   margin-right: 14px;
   cursor: pointer;
   border-radius: 100px;
@@ -232,7 +305,7 @@ Removes underlining in links
   line-height: normal;
   border-radius: 100px;
   border: 1px solid #fff;
-  padding: 14px 40px;
+  padding: 12px 28px;
   transition: color 300ms linear, border-color 300ms linear;
 }
 .hero-anchor-btn:hover,
@@ -246,7 +319,6 @@ Removes underlining in links
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.03em;
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -952,6 +1024,44 @@ Removes underlining in links
     line-height: 1.17;
   }
 
+  .hero {
+    padding-bottom: 40px;
+  }
+  .hero-container {
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url(../images/chocolate_main_tablet.jpg);
+    padding: 670px 40px 40px 40px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-container {
+      background-image: linear-gradient(
+          rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)
+        ),
+        url(../images/chocolate_main_tablet_2x.jpg);
+    }
+  }
+
+  .hero-title {
+    font-size: 28px;
+    max-width: 484px;
+  }
+  .hero-bottom-btn {
+    margin-left: auto;
+  }
+  .hero-buttons {
+    padding: 14px 40px;
+  }
+  .hero-anchor-btn {
+    padding: 14px 40px;
+  }
+
   .features {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1001,6 +1111,30 @@ Removes underlining in links
     max-width: 1166px;
   }
 
+  .hero {
+    padding-bottom: 80px;
+  }
+  .hero-container {
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url(../images/chocolate_main_optim.jpg);
+    padding-top: 380px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-container {
+      background-image: linear-gradient(
+          rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)
+        ),
+        url(../images/chocolate_main_mob_2x.jpg);
+    }
+  }
+
   .features-list {
     padding-left: 18px;
     padding-right: 18px;
@@ -1028,6 +1162,9 @@ Removes underlining in links
   }
   .made-wrap {
     flex-wrap: nowrap;
+  }
+  .made-picture {
+    flex-shrink: 0;
   }
   .made-item {
     margin-bottom: 24px;
